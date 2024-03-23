@@ -1,0 +1,26 @@
+name: Commit quotidien
+
+on:
+  schedule:
+    - cron: '0 20 * * *'  # Exécuter chaque jour à minuit
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install PyGithub
+
+      - name: Run Python script
+        run: python main.py  # Remplacez `script.py` par le nom de votre script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
