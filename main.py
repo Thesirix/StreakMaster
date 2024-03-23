@@ -1,5 +1,5 @@
 from github import Github
-from datetime import datetime, timedelta
+from datetime import datetime
 import os
 
 # Fonction pour effectuer un commit
@@ -14,11 +14,8 @@ def make_commit(repo, file_path, commit_message):
     # Effectuer le commit
     repo.update_file(contents.path, commit_message, new_content, contents.sha)
 
-# Récupérer le token d'accès GitHub à partir de la variable d'environnement
-access_token = os.getenv("API_GITHUB")
-
 # Récupérer la clé d'API GitHub à partir de la variable d'environnement
-api_key = os.getenv("API_KEY")
+access_token = os.getenv("API_GITHUB")
 
 # Nom d'utilisateur GitHub
 username = "Thesirix"

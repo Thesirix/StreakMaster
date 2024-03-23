@@ -2,7 +2,7 @@ name: Commit quotidien
 
 on:
   schedule:
-     - cron: '40 20 * * *'  # Exécuter chaque jour à 20h25
+    - cron: '48 20 * * *'  # Exécuter chaque jour à 20h40
 
 jobs:
   commit:
@@ -24,4 +24,3 @@ jobs:
         run: python main.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          API_KEY: ${{ secrets.API_GITHUB }}
