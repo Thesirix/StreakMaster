@@ -2,7 +2,7 @@ name: Commit quotidien
 
 on:
   schedule:
-    - cron: '27 20 * * *'  # Exécuter chaque jour à 20h25
+    - cron: '30 20 * * *'  # Exécuter chaque jour à 20h25
 
 jobs:
   commit:
